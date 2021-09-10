@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area & Parameter</title>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+    
+</head>
+<body>
+    <div class="container">
+
+        <h1>Area and Perimeter of Rectangle Calculator</h1>
+        <script>
+            "use strict";
+
+            function validateNumb(n){
+                // this loop will check if whether the user input is not a number or less than or equal to 0 and reprompt for a correct val
+                while(isNaN(n) || n <= 0){
+                    n = parseFloat(prompt("You've entered a wrong value. Please enter a valid number greater than 0"));
+                }
+                return n;
+            }
+
+            // get the width of the rectangle
+            let w = parseFloat(prompt("What is the width of the Rectangle?"));
+            w = validateNumb(w);
+
+            // get the length of the rectangle
+            let l = parseFloat(prompt("What is the length of the Rectangle?"));
+            l = validateNumb(l);
+            
+            // calculate the area of the rectangle
+            const a = (w * l).toFixed(1);
+            
+            // calculate the perimeter of the rectangle
+            const P = (2 * (l + w)).toFixed(1);
+
+            const html = `<p><label> Width: </label><b>${w}</b></p>
+                          <p><label> Length: </label><b>${l}</b></p>
+                          <p><label> Area: </label>A = lw = <b>${a}</b></p>
+                          <p><label> Perimeter: </label>P = 2(l + w) = <b>${P}</b></p>`;
+
+            document.write(html);
+        
+        </script>
+
+    </div>
+    
+</body>
+</html>

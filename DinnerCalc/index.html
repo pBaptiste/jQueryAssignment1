@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Calculate Cost of Diner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Meal Cost Calculator</h1>
+
+        <script>
+            "use strict";
+
+            function validateNumb(n){
+                // this loop will check if whether the user input is not a number or less than or equal to 0 and reprompt for a correct val
+                while(isNaN(n) || n <= 0){
+                    n = parseFloat(prompt("You've entered a wrong value. Please enter a valid number greater than 0"));
+                }
+                return n;
+            }
+
+            // get the cost of the meal
+            let mealCost = parseFloat(prompt("Enter the cost for the meal side"));
+            mealCost = validateNumb(mealCost);
+
+            // get the tip percentage
+            let tipPercent = parseFloat(prompt("Enter the tip percent"));
+            tipPercent = validateNumb(tipPercent);
+
+            // calculates the total cost of the meal
+            const totalCost = (mealCost + (mealCost * (tipPercent/100))).toFixed(2);
+
+            const html = `<p><label> Cost of Meal: </label><b>$${mealCost}</b></p>
+                          <p><lable> tip: </label><b>${tipPercent}%</b></p>
+                          <p><label> <span>Total Cost:</span> </label><b>$${totalCost}</b></p>`;
+            document.write(html);
+        </script>
+    </div>
+</body>
+
+</html>

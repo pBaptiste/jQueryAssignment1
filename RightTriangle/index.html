@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<!--- git add -A
+     git commit -m
+    git push origin master -->
+
+<head>
+
+    <title>Right Triangle Calculator</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hypotenuse Calculator</h1>
+
+        <script>
+            "use strict";
+            function validateNumb(n){
+                // this loop will check if whether the user input is not a number or less than or equal to 0 and reprompt for a correct val
+                while(isNaN(n) || n <= 0){
+                    n = parseFloat(prompt("You've entered a wrong value. Please enter a valid number greater than 0"));
+                }
+                return n;
+            }
+
+            // get the first side of the right triangle
+            let a = parseFloat(prompt("Enter the value for the first side"));
+            a = validateNumb(a);
+
+            // get the second side of the right triangle
+            let b = parseFloat(prompt("Enter the value for the second side"));
+            b = validateNumb(b);
+
+            // calculate the Hypotenuse of the third side using the Pythagorean theorem: c = √(b²+a²)
+            const c = Math.sqrt((a * a) + (b * b)).toFixed(2);
+
+            const html = `<p> <label>a side: </label><b>${a}</b></p>
+                     <p> <label>b side: </label><b>${b}</b></p>
+                     <p> <label><span>Solution:</span> </label>c = √(${a}² + ${b}²) ≈ <b>${c}</b></p>`;
+            document.write(html);
+        </script>
+    </div>
+
+</body>
+
+</html>

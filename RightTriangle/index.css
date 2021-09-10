@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.container{
+    margin-top: 10vh;
+    padding: 2rem;
+    border: 1px dotted black;
+}
+
+h1{
+    color: blue;
+}
+
+p{
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
+}
+
+span{
+    color: red;
+}
